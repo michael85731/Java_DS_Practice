@@ -4,21 +4,24 @@ public class temp
 {
     private static boolean flag = true;
     private static Scanner scanner = new Scanner(System.in);
-    private static Stack stack = null;
 
     public static void main(String args[]){
+        runStack();
+    }
+
+    public static void runStack(){
         System.out.print("Define stack size: ");
-        stack = new Stack(scanner.nextInt());
+        Stack stack = new Stack(scanner.nextInt());
 
         System.out.println("Operation code: 1) push data, 2) pop data, 3) check is empty, 4) get stack, exit) termiante the program.");
 
         while(flag){
             System.out.print("Please type the operation you want to do: ");
-            manipulate(scanner.next());
+            stack = manipulateStack(scanner.next(), stack);
         }
     }
 
-    public static void manipulate(String operator){
+    public static Stack manipulateStack(String operator, Stack stack){
         String result = "";
 
         switch(operator){
@@ -58,5 +61,6 @@ public class temp
             default:
                 System.out.println("not valid input");
         }
+        return stack;
     }
 }
