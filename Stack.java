@@ -9,11 +9,11 @@ abstract class StackStandard
         this.size = size;
     }
 
-    public abstract void push(int data);
-    public abstract int pop();
-    public abstract boolean isEmpty();
-    public abstract boolean isFull();
-    public abstract void getStack();
+    abstract public void push(int data);
+    abstract public int pop();
+    abstract public boolean isEmpty();
+    abstract public boolean isFull();
+    abstract public void getStack();
 }
 
 class Stack extends StackStandard

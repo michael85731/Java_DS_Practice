@@ -6,8 +6,74 @@ public class temp
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String args[]){
-        runStack();
+        runQueue();
+        //runStack();
     }
+
+    public static void runQueue(){
+        System.out.print("Define queue size: ");
+        Queue queue = new Queue(scanner.nextInt());
+
+        System.out.println("Operation code: 1) enqueue data, 2) dequeue data, 3) check is empty, 4) get queue, exit) termiante the program.");
+
+        while(flag){
+            System.out.print("Please type the operation you want to do: ");
+            queue = manipulateQueue(scanner.next(), queue);
+        }
+    }
+
+
+    public static Queue manipulateQueue(String instruction, Queue queue){
+        switch(instruction){
+            case "1":
+                if(queue.isFull()){
+                    System.out.println("Queue is full now.");
+                }else{
+                    System.out.print("Input data to queue: ");
+                    queue.enQueue(scanner.nextInt());
+                }
+                break;
+            case "2":
+                if(queue.isEmpty()){
+                    System.out.println("Queue is empty now.");
+                }else{
+                    System.out.println("deQueue with data: " + queue.deQueue());
+                }
+                break;
+            case "3":
+                String result = queue.isEmpty() ? "queue is empty" : "queue is not empty";
+                System.out.println(result);
+                break;
+            case "4":
+                if(queue.isEmpty()){
+                    System.out.println("queue is empty now.");
+                    break;
+                }else{
+                    queue.getQueue();
+                }
+                break;
+            case "exit":
+                flag = false;
+                break;
+            default:
+                System.out.println("not valid instruction.");
+        }
+
+        return queue;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static void runStack(){
         System.out.print("Define stack size: ");
@@ -22,8 +88,6 @@ public class temp
     }
 
     public static Stack manipulateStack(String operator, Stack stack){
-        String result = "";
-
         switch(operator){
             case "1":
                 if(stack.isFull()){
@@ -44,7 +108,7 @@ public class temp
                 }
                 break;
             case "3":
-                result = stack.isEmpty() ? "stack is empty" : "stack is not empty";
+                String result = stack.isEmpty() ? "stack is empty" : "stack is not empty";
                 System.out.println(result);
                 break;
             case "4":
@@ -59,7 +123,7 @@ public class temp
                 flag = false;
                 break;
             default:
-                System.out.println("not valid input");
+                System.out.println("not valid instruction.");
         }
         return stack;
     }
