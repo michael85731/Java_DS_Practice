@@ -9,9 +9,10 @@ abstract class StackStandard
         this.size = size;
     }
 
-    public abstract boolean push(int data);
+    public abstract void push(int data);
     public abstract int pop();
     public abstract boolean isEmpty();
+    public abstract boolean isFull();
     public abstract void getStack();
 }
 
@@ -22,14 +23,14 @@ class Stack extends StackStandard
     }
 
     @Override
-    public boolean push(int data){
-        if(this.pointer < this.size - 1 && this.pointer >= -1){
-            this.pointer += 1;
-            this.container[this.pointer] = data;
-            return true;
-        }else{
-            return false;
-        }
+    public boolean isFull(){
+        return this.pointer < this.size - 1 ? false : true;
+    }
+
+    @Override
+    public void push(int data){
+        this.pointer += 1;
+        this.container[this.pointer] = data;
     }
 
     @Override

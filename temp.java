@@ -23,14 +23,22 @@ public class temp
 
         switch(operator){
             case "1":
-                System.out.print("Input the data you want to push: ");
-                int data = scanner.nextInt();
-                result = stack.push(data) ? "push stack with data " + data : "stack is full";
-                System.out.println(result);
+                if(stack.isFull()){
+                    System.out.println("stack is full now.");
+                }else{
+                    System.out.print("Input the data you want to push: ");
+                    int data = scanner.nextInt();
+                    stack.push(data);
+                    System.out.println("push stack with data " + data);
+                }
                 break;
             case "2":
-                System.out.print("pop stack with data ");
-                System.out.println(stack.pop());
+                if(stack.isEmpty()){
+                    System.out.println("stack is empty now.");
+                }else{
+                    System.out.print("pop stack with data ");
+                    System.out.println(stack.pop());
+                }
                 break;
             case "3":
                 result = stack.isEmpty() ? "stack is empty" : "stack is not empty";
