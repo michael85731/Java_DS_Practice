@@ -32,7 +32,7 @@ class Queue extends QueueStandard
     @Override
     public int deQueue(){
         this.front += 1;
-        return this.container[this.front];
+        return this.container[t:his.front];
     }
 
     @Override
@@ -43,7 +43,6 @@ class Queue extends QueueStandard
     @Override
     public boolean isEmpty(){
         if(this.front == this.rear){
-            this.resetPointer();
             return true;
         }else{
             return false;
@@ -55,10 +54,5 @@ class Queue extends QueueStandard
         while(!(isEmpty())){
             System.out.println(deQueue());
         }
-    }
-
-    private void resetPointer(){
-        this.front = -1;
-        this.rear = -1;
     }
 }
