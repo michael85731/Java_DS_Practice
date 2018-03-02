@@ -42,11 +42,7 @@ class Queue extends QueueStandard
 
     @Override
     public boolean isEmpty(){
-        if(this.front == this.rear){
-            return true;
-        }else{
-            return false;
-        }
+        return this.front == this.rear ? true : false;
     }
 
     @Override
