@@ -13,7 +13,8 @@ public class temp
     }
 
     public static void runSingleLinkingList(){
-        SingleListNode node = new SingleListNode();
+        System.out.println("Operation code: 1) add node, 2) delete node, 3) append node, 4) prepend node, 5) travel list, 6) find node, exit) termiante the program.");
+        SingleLinkingList list = new SingleLinkingList();
     }
 
     public static void runCircularQueue(){

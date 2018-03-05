@@ -1,8 +1,6 @@
 abstract class SingleLinkingListStandard{
     abstract public void add();
     abstract public void delete();
-    abstract public void append();
-    abstract public void prepend();
     abstract public void travel();
     abstract public void find();
 }
@@ -18,14 +16,6 @@ class SingleLinkingList extends SingleLinkingListStandard{
 
     @Override
     public void delete(){
-    }
-
-    @Override
-    public void append(){
-    }
-
-    @Override
-    public void prepend(){
     }
 
     @Override
