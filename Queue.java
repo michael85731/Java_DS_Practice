@@ -32,7 +32,7 @@ class Queue extends QueueStandard
     @Override
     public int deQueue(){
         this.front += 1;
-        return this.container[t:his.front];
+        return this.container[this.front];
     }
 
     @Override

@@ -8,7 +8,12 @@ public class temp
     public static void main(String args[]){
         //runQueue();
         //runStack();
-        runCircularQueue();
+        //runCircularQueue();
+        runSingleLinkingList();
+    }
+
+    public static void runSingleLinkingList(){
+        SingleListNode node = new SingleListNode();
     }
 
     public static void runCircularQueue(){
